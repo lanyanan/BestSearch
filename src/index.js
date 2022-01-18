@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import { render } from 'react-dom'
+import Loadable from 'react-loadable';
+import { Provider } from 'react-redux'
+import './css/style.css';
+import store from './js/store/store';
+import Rout from './js/router/router';
+import '@devexpress/dx-react-chart-bootstrap4/dist/dx-react-chart-bootstrap4.css';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+//等DOM加载完成
+//这种是hash值改变的
+document.addEventListener('DOMContentLoaded', ()=>{
+	render((   
+		<Provider store={store}>
+	        <Rout></Rout>
+	  	</Provider>		
+	), document.getElementById('root'))
+});

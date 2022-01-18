@@ -1,0 +1,32 @@
+@import url(../libs/reset.css);
+@import url(../libs/mediaQuery.css);
+
+.reset-chart>div{
+    height: 200px!important;
+}
+.chart-name {
+    width: 100%;
+    height: 30px;
+    padding-top:30px;
+    padding-left: 20px;
+    font-size: 30px;
+}
+.chart-rate {
+    width: 100%;
+    padding-left: 20px;
+    font-size: 18px;
+    color:#bbb;
+}
+
+.chart-footer {
+    width: 100%;
+    text-align: center;
+    color:#bbb;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 40px;
+
+}
+body {
+    background: #fff7f2;
+}
