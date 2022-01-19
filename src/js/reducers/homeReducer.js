@@ -2,7 +2,7 @@ import { CHANGE_DEMO_ACTION , ASYNC_GET_DATA} from '../actions/homeAction';
 
 let dataTree = {
   successMark: "项目已经启动",
-  product_trends:[]
+  product_trends:''
 }
 
 export function HomeReducer(state = dataTree, action) {

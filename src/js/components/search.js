@@ -9,26 +9,20 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
-import InputBase from '@mui/material/InputBase';
-import IconButton from '@mui/material/IconButton';
-import SearchIcon from '@mui/icons-material/Search';
-
+import Skeleton from '@mui/material/Skeleton';
+import Stack from '@mui/material/Stack';
 
 import {
   Chart,
-  ArgumentAxis,
   AreaSeries,
-  Legend,
   Title,
 } from '@devexpress/dx-react-chart-material-ui';
 import {
-  stackOffsetWiggle,
-  stackOrderInsideOut,
   curveCatmullRom,
   area,
 } from 'd3-shape';
 
-import { Stack, Animation } from '@devexpress/dx-react-chart';
+import { Animation } from '@devexpress/dx-react-chart';
 
 const Item = styled(Paper)(({ theme }) => ({
   padding: "100px 0 0 0",
@@ -63,6 +57,45 @@ function Home(props) {
         </Grid>
       </Grid>
       <Grid  xs={12} justifyContent="center" item>
+      {!list?(<Box
+      sx={{
+        display: 'flex',
+        justifyContent:'center',
+        mt:7,
+        flexWrap: 'wrap',
+        '& > :not(style)': {
+          m: 1,
+          width: 230,
+          height: 300,
+        },
+      }}
+    ><Stack spacing={1}>
+      <Skeleton variant="text" />
+      <Skeleton variant="circular" width={40} height={40} />
+      <Skeleton variant="rectangular" width={210} height={118} />
+    </Stack>
+    <Stack spacing={1}>
+      <Skeleton variant="text" />
+      <Skeleton variant="circular" width={40} height={40} />
+      <Skeleton variant="rectangular" width={210} height={118} />
+    </Stack>
+    <Stack spacing={1}>
+      <Skeleton variant="text" />
+      <Skeleton variant="circular" width={40} height={40} />
+      <Skeleton variant="rectangular" width={210} height={118} />
+    </Stack>
+    <Stack spacing={1}>
+      <Skeleton variant="text" />
+      <Skeleton variant="circular" width={40} height={40} />
+      <Skeleton variant="rectangular" width={210} height={118} />
+    </Stack>
+    <Stack spacing={1}>
+      <Skeleton variant="text" />
+      <Skeleton variant="circular" width={40} height={40} />
+      <Skeleton variant="rectangular" width={210} height={118} />
+    </Stack>
+    </Box>
+    ):null}
       <Box
       sx={{
         display: 'flex',
@@ -76,7 +109,8 @@ function Home(props) {
         },
       }}
     >
-      {list.map(item=>{
+
+      {list&&list.map(item=>{
         return <Paper key={item.name} elevation={3} >
         <span className="chart-name">{item.name}</span>
         <div className="chart-rate">Growth {item.growth}%</div>
