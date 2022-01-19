@@ -58,7 +58,7 @@ export default function Head(props) {
       <Grid container spacing={2} item>
           <Grid item xs={2} >
             <Box sx={{ display: 'flex',fontSize:30}}>
-              <span style={{fontWeight:900}}>Best</span><span style={{fontWeight:100}}>Search</span>
+              <span style={{fontWeight:900,lineHeight:'30px'}}>Best</span><span style={{fontWeight:100,lineHeight:'33px'}}>Search</span>
             </Box>
           </Grid>
           {show?<Grid xs={10} container item>
